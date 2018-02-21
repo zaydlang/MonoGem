@@ -50,9 +50,15 @@
     <EmbedAssembliesIntoApk>True</EmbedAssembliesIntoApk>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FFAssetPack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\FFAssetPack.1.0.0\lib\netstandard2.0\FFAssetPack.dll</HintPath>
+    </Reference>
+    <Reference Include="MGLayers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\packages\MGLayers.1.0.0\lib\netstandard2.0\MGLayers.dll</HintPath>
+    </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="MonoGame.Framework, Version=3.6.0.1625, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\packages\MonoGame.Framework.Android.3.6.0.1625\lib\MonoAndroid\MonoGame.Framework.dll</HintPath>
+      <HintPath>..\packages\MonoGame.Framework.Portable.3.6.0.1625\lib\portable-net45+win8+wpa81\MonoGame.Framework.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib" />
     <Reference Include="System" />
@@ -84,6 +90,10 @@
     <ProjectReference Include="..\..\FFNez\Nez.Portable\FFNez.csproj">
       <Project>{60b7197d-d0d5-405c-90a2-a56903e9b039}</Project>
       <Name>FFNez</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Nez.Fuf\Nez.Fuf\Nez.Fuf.csproj">
+      <Project>{7ef8eb31-b61c-4ff2-80df-08ea2766f6c4}</Project>
+      <Name>Nez.Fuf</Name>
     </ProjectReference>
     <ProjectReference Include="..\MonoGem.Shared\MonoGem.Shared.csproj">
       <Project>{0e644792-5239-44a6-adb1-fc6601b2d046}</Project>
