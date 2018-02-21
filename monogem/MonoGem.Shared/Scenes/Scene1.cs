@@ -1,6 +1,9 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System.Linq;
+using System.Xml.Schema;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Input.Touch;
 using Nez;
 using Nez.Fuf.Physics;
 using Nez.Fuf.Sprites;
@@ -40,19 +43,22 @@ namespace MonoGem.Scenes {
             }
 
             public void update() {
-                if (Input.isKeyDown(Keys.Down)) {
+                var touch = Input.touch.isConnected ? Input.touch.currentTouches.FirstOrDefault() : (TouchLocation?) null;
+                var touchPos = touch?.scaledPosition();
+                
+                if (Input.isKeyDown(Keys.Down) || touchPos?.Y > Core.instance.defaultResolution.Y * 0.7) {
                     _body.velocity += new Vector2(0, _moveAccel);
                 }
 
-                if (Input.isKeyDown(Keys.Up)) {
+                if (Input.isKeyDown(Keys.Up) || touchPos?.Y < Core.instance.defaultResolution.Y * 0.3) {
                     _body.velocity += new Vector2(0, -_moveAccel);
                 }
 
-                if (Input.isKeyDown(Keys.Right)) {
+                if (Input.isKeyDown(Keys.Right) || touchPos?.X > Core.instance.defaultResolution.X * 0.7) {
                     _body.velocity += new Vector2(_moveAccel, 0);
                 }
 
-                if (Input.isKeyDown(Keys.Left)) {
+                if (Input.isKeyDown(Keys.Left) || touchPos?.X < Core.instance.defaultResolution.X * 0.3) {
                     _body.velocity += new Vector2(-_moveAccel, 0);
                 }
             }

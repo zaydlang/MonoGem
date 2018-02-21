@@ -43,10 +43,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Game1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scenes\Scene1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Icon.png" />
@@ -99,6 +97,10 @@
     <ProjectReference Include="..\..\Nez.Fuf\Nez.Fuf\Nez.Fuf.csproj">
       <Project>{7ef8eb31-b61c-4ff2-80df-08ea2766f6c4}</Project>
       <Name>Nez.Fuf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MonoGem.Shared\MonoGem.Shared.csproj">
+      <Project>{0e644792-5239-44a6-adb1-fc6601b2d046}</Project>
+      <Name>MonoGem.Shared</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
